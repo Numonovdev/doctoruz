@@ -44,8 +44,8 @@ function PatientPage() {
   if (loading) return <p>Yuklanmoqda...</p>;
 
   return (
-    <div style={{ padding: 20 }}>
-      <h2>{patient.ism} {patient.familya}</h2>
+    <div className="p-6">
+      <h2 className="text-2xl font-bold mb-4">{patient.ism} {patient.familya}</h2>
       <p><b>Telefon:</b> {patient.tel}</p>
       <p><b>Manzil:</b> {patient.manzil}</p>
       <p><b>Oxirgi murojat:</b> {patient.oxirgiMurojat}</p>
@@ -60,20 +60,22 @@ function PatientPage() {
       </ul>
 
       <hr />
-      <h4>Yangi tashxis qo‘shish</h4>
-      <input
-        type="text"
-        placeholder="Kasallik nomi"
-        value={kasallik}
-        onChange={(e) => setKasallik(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Dorilar (vergul bilan)"
-        value={dori}
-        onChange={(e) => setDori(e.target.value)}
-      />
-      <button onClick={handleAddDiagnosis}>Qo‘shish</button>
+      <div>
+          <h4>Yangi tashxis qo‘shish</h4>
+          <input
+            type="text"
+            placeholder="Kasallik nomi"
+            value={kasallik}
+            onChange={(e) => setKasallik(e.target.value)}
+            />
+          <input
+            type="text"
+            placeholder="Dorilar (vergul bilan)"
+            value={dori}
+            onChange={(e) => setDori(e.target.value)}
+            />
+          <button onClick={handleAddDiagnosis}>Qo‘shish</button>
+        </div>
     </div>
   );
 }
